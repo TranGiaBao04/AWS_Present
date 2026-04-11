@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVC System – AWS Architecture</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===== SLIDE INDICATOR ===== -->
+    <div class="slide-indicator" id="slideIndicator"></div>
+    <div class="key-hint" id="keyHint">↑ ↓ Arrow keys to navigate</div>
+
+    <div class="presentation-container" id="presentationContainer">
+      <!-- ================= SLIDE 1 — TITLE ================= -->
+      <section class="slide theme-dark" id="slide-1">
+        <div class="decor-grid"></div>
+        <div class="decor-circle circle-1"></div>
+        <div class="decor-circle circle-2"></div>
+
+        <header class="slide-header">
+          <!-- FPT University Logo (left) -->
+          <div class="logo">
+            <img
+              src="assets/Logo_FPT.svg"
+              alt="FPT University"
+              class="logo-fpt-img"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'inline-flex';
+              "
+            />
+            <span class="logo-fallback fptu-fallback logo-fallback-hidden"
+              >FPT</span
+            >
+            <div class="tev-logo">
+              <div class="tev-logo-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="tev-logo-text"
+                ><span class="ev">EV</span>Charge</span
+              >
+            </div>
+          </div>
+          <nav class="top-nav">
+            <button class="pill active" onclick="goToSlide(1)">Home</button>
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button class="pill" onclick="goToSlide(14)">Contact</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <!-- AWS Logo (right) -->
+            <div class="aws-logo-box">
+              <img
+                src="assets/AWS_Logo.svg.png"
+                alt="Amazon Web Services"
+                class="logo-aws-img"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'inline-flex';
+                "
+              />
+              <span class="logo-fallback aws-fallback logo-fallback-hidden"
+                >AWS</span
+              >
+            </div>
+          </nav>
+        </header>
+
+        <div class="content cover-layout">
+          <div class="relative-z">
+            <div class="tag-accent">🚀 AWS Cloud Architecture</div>
+            <h1 class="giant-text text-white">
+              Scalable AWS<br />Architecture
+            </h1>
+            <p class="sub-giant-text">for EVC System</p>
+            <p class="slide1-tagline">
+              High Availability · Secure · Production Ready
+            </p>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">01 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 2 — TEAM MEMBERS ================= -->
+      <section class="slide theme-dark" id="slide-2">
+        <div class="decor-grid"></div>
+        <div class="decor-circle circle-1 circle-faded-04"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(1)">Overview</button>
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content align-center content-col-gap-sm">
+          <div class="tag-accent">Our Team</div>
+          <h2 class="section-title text-white text-center section-title-xl">
+            Meet the Members
+          </h2>
+          <p class="desc-text text-center mb-1rem">
+            FPT University — Cloud Computing Project
+          </p>
+
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-name">Vũ Minh Quang</div>
+              <div class="member-role">Team Leader</div>
+              <div class="member-id">SE192755</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Trần Gia Bảo</div>
+              <div class="member-role">Developer</div>
+              <div class="member-id">SE182346</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Phạm Văn Minh</div>
+              <div class="member-role">Developer</div>
+              <div class="member-id">SE183365</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Nguyễn Thị Ngọc Tuyền</div>
+              <div class="member-role">Developer</div>
+              <div class="member-id">SE193816</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Hoàng Bảo Thạch</div>
+              <div class="member-role">Developer</div>
+              <div class="member-id">SE191044</div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">02 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 3 — PROBLEM ================= -->
+      <section class="slide theme-dark panel-white-right-wide" id="slide-3">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(1)">Overview</button>
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane">
+            <div class="tag-accent">The Problem</div>
+            <h2 class="section-title text-white">
+              Why Traditional<br />Systems Fail
+            </h2>
+            <p class="desc-text mt-3">
+              Traditional systems cannot handle real-world production needs.
+            </p>
+          </div>
+          <div class="right-pane">
+            <ul class="checklist checklist-no-style">
+              <li>
+                <div class="check-icon check-icon-danger">✕</div>
+                <div class="text-content">
+                  <h4 class="text-danger">Cannot Scale</h4>
+                  <p>Fails when traffic suddenly increases</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon check-icon-danger">✕</div>
+                <div class="text-content">
+                  <h4 class="text-danger">High Downtime Risk</h4>
+                  <p>Single point of failure, no redundancy</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon check-icon-danger">✕</div>
+                <div class="text-content">
+                  <h4 class="text-danger">Limited Security</h4>
+                  <p>Exposed endpoints, no WAF or encryption</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon check-icon-danger">✕</div>
+                <div class="text-content">
+                  <h4 class="text-danger">Hard to Maintain</h4>
+                  <p>Manual deployments, no CI/CD pipeline</p>
+                </div>
+              </li>
+            </ul>
+            <div class="callout-box-light mt-2">
+              <p class="callout-text-dark">
+                → Need a scalable, secure, production-ready system
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">03 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 4 — SOLUTION + PRODUCT ================= -->
+      <section class="slide theme-dark panel-white-right-wide" id="slide-4">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(1)">Overview</button>
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane">
+            <div class="tag-accent">Our Solution</div>
+            <h2 class="section-title text-white">Built on<br />AWS Cloud</h2>
+            <div class="pill-cards-container pill-cards-col mt-2">
+              <div class="info-pill-card">
+                <div class="number">1</div>
+                <div>
+                  <h4>Separated Layers</h4>
+                  <p>Frontend, Backend, Database fully decoupled</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">2</div>
+                <div>
+                  <h4>High Availability</h4>
+                  <p>Multi-AZ deployment, no single point of failure</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">3</div>
+                <div>
+                  <h4>Secure API</h4>
+                  <p>JWT-based stateless authentication</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-pane right-pane-center">
+            <div class="screenshot-placeholder">
+              <img src="assets/web.png" alt="Web Interface" />
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">04 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 5 — FULL ARCHITECTURE ================= -->
+      <section class="slide theme-dark" id="slide-5">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">🔥 Core Architecture</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="slide5-title-block">
+          <h2 class="section-title text-white text-center section-title-xl">
+            Full System Architecture
+          </h2>
+          <p class="desc-text text-center desc-text-limited">
+            3 Layers: Edge – Application – Data · Multi-AZ · Secure &amp;
+            Scalable
+          </p>
+        </div>
+
+        <div class="diagram-wrapper">
+          <div class="diagram-placeholder">
+            <img src="assets/AWS-architecture.png" alt="AWS-architecture" />
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">05 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 6 — REQUEST FLOW ================= -->
+      <section class="slide theme-dark" id="slide-6">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content align-center content-col-gap-sm">
+          <div class="tag-accent">Request Flow</div>
+          <h2 class="section-title text-white text-center section-title-xl">
+            How Every Request Travels
+          </h2>
+          <p class="desc-text text-center">
+            Every user action follows this flow across our system.
+          </p>
+
+          <div
+            class="request-response-flow mt-3"
+            aria-label="Request and response flow"
+          >
+            <div class="flow-section">
+              <div class="flow-section-title">Request</div>
+              <div class="flow-row request-row">
+                <div class="flow-node">
+                  <span class="step-no">1</span><span>User</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node">
+                  <span class="step-no">2</span><span>Route53</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node">
+                  <span class="step-no">3</span><span>CloudFront</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node">
+                  <span class="step-no">4</span><span>S3</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node main-path">
+                  <span class="step-no">5</span><span>ALB</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node main-path">
+                  <span class="step-no">6</span><span>EC2</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node main-path">
+                  <span class="step-no">7</span><span>RDS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-section">
+              <div class="flow-section-title">Response</div>
+              <div class="flow-row response-row">
+                <div class="flow-node main-path">
+                  <span class="step-no">8</span><span>RDS</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node">
+                  <span class="step-no">9</span><span>Response</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node">
+                  <span class="step-no">10</span><span>CloudFront</span>
+                </div>
+                <span class="flow-inline-arrow" aria-hidden="true"></span>
+                <div class="flow-node end-user-node">
+                  <span class="step-no">11</span><span>User</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">06 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 7 — AUTH FLOW ================= -->
+      <section class="slide theme-dark" id="slide-7">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane">
+            <div class="tag-accent">Security</div>
+            <h2 class="section-title text-white">Auth Flow<br />JWT Based</h2>
+            <p class="desc-text mt-3">
+              JWT-based authentication for stateless, scalable security.
+            </p>
+            <div class="callout-box-blue mt-2">
+              <p class="callout-text-white">
+                ✓ Stateless &amp; secure authentication
+              </p>
+            </div>
+          </div>
+          <div class="right-pane">
+            <div class="auth-flow">
+              <div class="auth-step">
+                <span class="step-num">1</span> User submits Login credentials
+                <span class="arrow">→</span>
+              </div>
+              <div class="auth-step auth-step-blue">
+                <span class="step-num">2</span> Backend validates credentials &
+                returns JWT token
+                <span class="arrow">↩</span>
+              </div>
+              <div class="auth-step">
+                <span class="step-num">3</span> Client stores token in memory /
+                header
+                <span class="arrow">→</span>
+              </div>
+              <div class="auth-step auth-step-blue">
+                <span class="step-num">4</span> All API calls include
+                <strong>Bearer JWT</strong> <span class="arrow">→</span>
+              </div>
+              <div class="auth-step">
+                <span class="step-num">5</span> Backend verifies JWT signature ✓
+                <span class="arrow">→</span>
+              </div>
+              <div class="auth-step auth-step-success">
+                <span class="step-num step-num-success">✓</span>
+                Access granted to protected resources
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">07 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 8 — EDGE LAYER ================= -->
+      <section class="slide theme-dark panel-white-right" id="slide-8">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">Layer 1 of 3</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane left-pane-flex2">
+            <div class="tag-accent">Edge Layer</div>
+            <h2 class="section-title text-white">Fast & Secure User Access</h2>
+            <div class="pill-cards-container pill-cards-col mt-2">
+              <div class="info-pill-card">
+                <div class="number">🌐</div>
+                <div>
+                  <h4>Route 53</h4>
+                  <p>DNS routing with health checks and failover</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">⚡</div>
+                <div>
+                  <h4>CloudFront CDN</h4>
+                  <p>Global edge caching, low latency delivery</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🛡️</div>
+                <div>
+                  <h4>WAF</h4>
+                  <p>Web Application Firewall blocks threats</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">📍</div>
+                <div>
+                  <h4>Location Service</h4>
+                  <p>Map &amp; geolocation for EVC stations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-pane right-pane-flex1-center-col">
+            <img src="assets/Edge_layer.png" alt="Edge_layer" />
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">08 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 9 — APPLICATION LAYER ================= -->
+      <section class="slide theme-dark" id="slide-9">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">Layer 2 of 3</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="right-pane right-pane-img-center">
+            <div>
+              <img src="assets/Application.png" alt="Application" />
+            </div>
+          </div>
+          <div class="left-pane">
+            <div class="tag-accent">Application Layer</div>
+            <h2 class="section-title text-white">
+              High Availability<br />& Scalability
+            </h2>
+            <div class="pill-cards-container pill-cards-col mt-2">
+              <div class="info-pill-card">
+                <div class="number">⚖️</div>
+                <div>
+                  <h4>ALB</h4>
+                  <p>Application Load Balancer distributes traffic evenly</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🖥️</div>
+                <div>
+                  <h4>EC2 Instances</h4>
+                  <p>Backend API runs on managed compute instances</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">📈</div>
+                <div>
+                  <h4>Auto Scaling</h4>
+                  <p>Scales in/out based on real-time traffic demand</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🌍</div>
+                <div>
+                  <h4>Multi-AZ</h4>
+                  <p>Deployed across availability zones for redundancy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">09 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 10 — DATA LAYER ================= -->
+      <section class="slide theme-dark panel-white-right" id="slide-10">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">Layer 3 of 3</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane left-pane-flex2">
+            <div class="tag-accent">Data Layer</div>
+            <h2 class="section-title text-white">
+              Secure & Reliable<br />Data Storage
+            </h2>
+            <div class="pill-cards-container pill-cards-col mt-2">
+              <div class="info-pill-card">
+                <div class="number">🗄️</div>
+                <div>
+                  <h4>Amazon RDS</h4>
+                  <p>Managed relational database with automated backups</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🔁</div>
+                <div>
+                  <h4>Primary + Standby</h4>
+                  <p>Automatic failover with Multi-AZ replication</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🔒</div>
+                <div>
+                  <h4>Private Subnet</h4>
+                  <p>Isolated from public internet, VPC-only access</p>
+                </div>
+              </div>
+              <div class="info-pill-card">
+                <div class="number">🚫</div>
+                <div>
+                  <h4>No Public Access</h4>
+                  <p>Database only reachable from application layer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-pane right-pane-flex1-center-col">
+            <img src="assets/Data_layer.png" alt="Data_layer" />
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">10 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 11 — SECURITY & MONITORING ================= -->
+      <section class="slide theme-dark" id="slide-11">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content align-center content-gap-lg">
+          <div class="tag-accent">Security &amp; Observability</div>
+          <h2 class="section-title text-white text-center section-title-xl">
+            Full Security & Monitoring
+          </h2>
+
+          <div class="card-grid-2 mt-3">
+            <div class="vertical-card highlight">
+              <div class="icon-top">🔑</div>
+              <h4 class="vertical-card-title">Secrets Manager</h4>
+              <p class="vertical-card-desc">
+                Securely stores DB credentials &amp; API keys
+              </p>
+            </div>
+            <div class="vertical-card highlight">
+              <div class="icon-top">🔐</div>
+              <h4 class="vertical-card-title">KMS Encryption</h4>
+              <p class="vertical-card-desc">
+                Encrypts data at rest and in transit
+              </p>
+            </div>
+            <div class="vertical-card highlight">
+              <div class="icon-top">📊</div>
+              <h4 class="vertical-card-title">CloudWatch</h4>
+              <p class="vertical-card-desc">
+                Metrics, alerts, dashboards &amp; logs
+              </p>
+            </div>
+            <div class="vertical-card highlight">
+              <div class="icon-top">📋</div>
+              <h4 class="vertical-card-title">CloudTrail</h4>
+              <p class="vertical-card-desc">
+                Full audit trail of all API activity
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">11 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 12 — ADMIN & IAM ================= -->
+      <section class="slide theme-dark panel-white-right-wide" id="slide-12">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content split-light-layout">
+          <div class="left-pane">
+            <div class="tag-accent">Admin &amp; IAM</div>
+            <h2 class="section-title text-white">
+              Controlled & <br />Secure Access
+            </h2>
+            <p class="desc-text mt-3">
+              We avoid direct server access for maximum security.
+            </p>
+            <div class="callout-box-blue-inline mt-2">
+              <p class="callout-text-white">🚫 No SSH — All access via SSM</p>
+            </div>
+          </div>
+          <div class="right-pane">
+            <div class="horizontal-card-list iam-card-list">
+              <div class="row-step row-step-light-odd">
+                <span>🖥️</span> <strong>AWS Systems Manager (SSM)</strong> —
+                browser shell
+              </div>
+              <div class="row-step row-step-light-even">
+                <span>🚫</span> <strong>No SSH ports</strong> open — attack
+                surface minimized
+              </div>
+              <div class="row-step row-step-light-odd">
+                <span>👤</span> <strong>IAM Role for EC2</strong> — principle of
+                least privilege
+              </div>
+              <div class="row-step row-step-light-even">
+                <span>🔑</span> <strong>Read Secrets</strong> — from Secrets
+                Manager only
+              </div>
+              <div class="row-step row-step-light-odd">
+                <span>📝</span> <strong>Write Logs</strong> — to CloudWatch log
+                groups
+              </div>
+              <div class="row-step row-step-light-even">
+                <span>📧</span> <strong>Send Email</strong> — via SES for
+                notifications
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">12 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 13 — IMPROVEMENTS ================= -->
+      <section class="slide theme-dark" id="slide-13">
+        <div class="decor-grid"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">🔥 Key Improvement</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content align-center content-gap-sm">
+          <div class="tag-accent">Before vs After</div>
+          <h2 class="section-title text-white text-center section-title-xl">
+            Production-Ready Architecture
+          </h2>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>❌ Before</th>
+                <th>✅ After</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Scalability</td>
+                <td class="bad">Single server, fixed capacity</td>
+                <td class="good">Auto Scaling across Multi-AZ</td>
+              </tr>
+              <tr>
+                <td>Monitoring</td>
+                <td class="bad">No monitoring or alerts</td>
+                <td class="good">CloudWatch + CloudTrail</td>
+              </tr>
+              <tr>
+                <td>Security</td>
+                <td class="bad">Weak, open endpoints</td>
+                <td class="good">WAF + JWT + IAM + KMS</td>
+              </tr>
+              <tr>
+                <td>Availability</td>
+                <td class="bad">Single point of failure</td>
+                <td class="good">Multi-AZ, ALB failover</td>
+              </tr>
+              <tr>
+                <td>Access Control</td>
+                <td class="bad">SSH with shared keys</td>
+                <td class="good">SSM + IAM roles, no SSH</td>
+              </tr>
+              <tr>
+                <td>Database</td>
+                <td class="bad">Public, no backup</td>
+                <td class="good">Private subnet + RDS Multi-AZ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">13 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 14 — DEMO ================= -->
+      <section class="slide theme-dark" id="slide-14">
+        <div class="decor-grid"></div>
+        <div class="decor-circle circle-1 circle-faded-03"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <div class="tag-accent tag-accent-nav">🔴 Live</div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content cover-layout content-gap-lg">
+          <div class="relative-z text-center">
+            <div class="demo-emoji">🎥</div>
+            <a
+              href="https://evcsystem.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tag-accent tag-accent-demo tag-accent-link"
+              >🔗 Demo</a
+            >
+            <h2 class="giant-text text-white demo-title">Real-Time System</h2>
+            <p class="sub-giant-text demo-subtitle">
+              Demonstrating real-time system behavior
+            </p>
+          </div>
+          <div class="horizontal-card-list demo-steps">
+            <div class="row-step highlight">
+              <span>1</span> User login &amp; JWT authentication flow
+            </div>
+            <div class="row-step">
+              <span>2</span> Core system functionality walkthrough
+            </div>
+            <div class="row-step highlight">
+              <span>3</span> API interaction with AWS backend via ALB
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">14 / 15</div>
+        </footer>
+      </section>
+
+      <!-- ================= SLIDE 15 — CONCLUSION ================= -->
+      <section class="slide theme-dark" id="slide-15">
+        <div class="decor-grid"></div>
+        <div class="decor-circle circle-1"></div>
+        <div class="decor-circle circle-2"></div>
+
+        <header class="slide-header">
+          <div class="tev-logo">
+            <div class="tev-logo-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+          </div>
+          <nav class="top-nav">
+            <button class="pill active" onclick="goToSlide(1)">
+              ↩ Start Over
+            </button>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+          </nav>
+        </header>
+
+        <div class="content cover-layout">
+          <div class="relative-z">
+            <div class="tag-accent">Conclusion</div>
+            <h2 class="giant-text text-white conclusion-giant">
+              Production<br />Ready ✓
+            </h2>
+            <div class="conclusion-points conclusion-points-layout mt-4">
+              <div class="conclusion-point">
+                <div class="c-dot"></div>
+                <span class="conclusion-text"
+                  >Scalable AWS architecture with Auto Scaling</span
+                >
+              </div>
+              <div class="conclusion-point">
+                <div class="c-dot"></div>
+                <span class="conclusion-text"
+                  >High availability with Multi-AZ deployment</span
+                >
+              </div>
+              <div class="conclusion-point">
+                <div class="c-dot"></div>
+                <span class="conclusion-text"
+                  >Strong security: WAF, JWT, IAM, KMS</span
+                >
+              </div>
+              <div class="conclusion-point">
+                <div class="c-dot"></div>
+                <span class="conclusion-text"
+                  >Ready for real-world production deployment</span
+                >
+              </div>
+            </div>
+            <div class="conclusion-badge">
+              <p class="conclusion-badge-text">
+                Not just a project — a production-ready system
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer right-only">
+          <div class="page-pill">15 / 15</div>
+        </footer>
+      </section>
+    </div>
+    <!-- end .presentation-container -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
