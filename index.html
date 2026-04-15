@@ -3,14 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EVC System – AWS Architecture</title>
+    <title>EVC System - AWS Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <!-- ===== SLIDE INDICATOR ===== -->
     <div class="slide-indicator" id="slideIndicator"></div>
-    <div class="key-hint" id="keyHint">↑ ↓ Arrow keys to navigate</div>
+    <div class="key-hint" id="keyHint" data-i18n="meta.keyHint">
+      ↑ ↓ Arrow keys to navigate
+    </div>
+    <div class="presentation-tools">
+      <div
+        class="language-switch"
+        role="group"
+        data-i18n-aria-label="meta.languageGroupLabel"
+      >
+        <button
+          type="button"
+          class="lang-btn active"
+          data-lang-switch="en"
+          aria-pressed="true"
+          data-i18n="meta.languageEn"
+        >
+          EN
+        </button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+        <button
+          type="button"
+          class="lang-btn"
+          data-lang-switch="vi"
+          aria-pressed="false"
+          data-i18n="meta.languageVi"
+        >
+          VI
+        </button>
+      </div>
+    </div>
 
     <div class="presentation-container" id="presentationContainer">
       <!-- ================= SLIDE 1 — TITLE ================= -->
@@ -25,13 +60,16 @@
             <img
               src="assets/Logo_FPT.svg"
               alt="FPT University"
+              data-i18n-alt="meta.logoFptAlt"
               class="logo-fpt-img"
               onerror="
                 this.style.display = 'none';
                 this.nextElementSibling.style.display = 'inline-flex';
               "
             />
-            <span class="logo-fallback fptu-fallback logo-fallback-hidden"
+            <span
+              class="logo-fallback fptu-fallback logo-fallback-hidden"
+              data-i18n="brand.fpt"
               >FPT</span
             >
             <div class="tev-logo">
@@ -50,28 +88,49 @@
                   ></path>
                 </svg>
               </div>
-              <span class="tev-logo-text"
+              <span class="tev-logo-text" data-i18n-html="brand.evcharge"
                 ><span class="ev">EV</span>Charge</span
               >
             </div>
           </div>
           <nav class="top-nav">
-            <button class="pill active" onclick="goToSlide(1)">Home</button>
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
-            <button class="pill" onclick="goToSlide(14)">Contact</button>
+            <button
+              class="pill active"
+              onclick="goToSlide(1)"
+              data-i18n="common.nav.home"
+            >
+              Home
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(14)"
+              data-i18n="common.nav.contact"
+            >
+              Contact
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
             <!-- AWS Logo (right) -->
             <div class="aws-logo-box">
               <img
                 src="assets/AWS_Logo.svg.png"
                 alt="Amazon Web Services"
+                data-i18n-alt="meta.logoAwsAlt"
                 class="logo-aws-img"
                 onerror="
                   this.style.display = 'none';
                   this.nextElementSibling.style.display = 'inline-flex';
                 "
               />
-              <span class="logo-fallback aws-fallback logo-fallback-hidden"
+              <span
+                class="logo-fallback aws-fallback logo-fallback-hidden"
+                data-i18n="brand.aws"
                 >AWS</span
               >
             </div>
@@ -80,12 +139,16 @@
 
         <div class="content cover-layout">
           <div class="relative-z">
-            <div class="tag-accent">🚀 AWS Cloud Architecture</div>
-            <h1 class="giant-text text-white">
+            <div class="tag-accent" data-i18n="slide1.tag">
+              🚀 AWS Cloud Architecture
+            </div>
+            <h1 class="giant-text text-white" data-i18n-html="slide1.title">
               Scalable AWS<br />Architecture
             </h1>
-            <p class="sub-giant-text">for EVC System</p>
-            <p class="slide1-tagline">
+            <p class="sub-giant-text" data-i18n="slide1.subtitle">
+              for EVC System
+            </p>
+            <p class="slide1-tagline" data-i18n="slide1.tagline">
               High Availability · Secure · Production Ready
             </p>
           </div>
@@ -118,50 +181,106 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(1)">Overview</button>
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
-            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <button
+              class="pill"
+              onclick="goToSlide(1)"
+              data-i18n="common.nav.overview"
+            >
+              Overview
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(14)"
+              data-i18n="common.nav.demo"
+            >
+              Demo
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content align-center content-col-gap-sm">
-          <div class="tag-accent">Our Team</div>
-          <h2 class="section-title text-white text-center section-title-xl">
+          <div class="tag-accent" data-i18n="slide2.tag">Our Team</div>
+          <h2
+            class="section-title text-white text-center section-title-xl"
+            data-i18n="slide2.title"
+          >
             Meet the Members
           </h2>
-          <p class="desc-text text-center mb-1rem">
+          <p
+            class="desc-text text-center mb-1rem"
+            data-i18n="slide2.description"
+          >
             FPT University — Cloud Computing Project
           </p>
 
           <div class="team-grid">
-            <div class="team-member">
-              <div class="member-name">Vũ Minh Quang</div>
-              <div class="member-role">Team Leader</div>
-              <div class="member-id">SE192755</div>
+            <div class="team-member team-member-leader">
+              <div class="member-name" data-i18n="slide2.member1.name">
+                Vũ Minh Quang
+              </div>
+              <div class="member-role" data-i18n="slide2.member1.role">
+                Team Leader
+              </div>
+              <div class="member-id" data-i18n="slide2.member1.id">
+                SE192755
+              </div>
             </div>
-            <div class="team-member">
-              <div class="member-name">Trần Gia Bảo</div>
-              <div class="member-role">Developer</div>
-              <div class="member-id">SE182346</div>
+            <div class="team-member team-member-dev">
+              <div class="member-name" data-i18n="slide2.member2.name">
+                Trần Gia Bảo
+              </div>
+              <div class="member-role" data-i18n="slide2.member2.role">
+                Developer
+              </div>
+              <div class="member-id" data-i18n="slide2.member2.id">
+                SE182346
+              </div>
             </div>
-            <div class="team-member">
-              <div class="member-name">Phạm Văn Minh</div>
-              <div class="member-role">Developer</div>
-              <div class="member-id">SE183365</div>
+            <div class="team-member team-member-dev">
+              <div class="member-name" data-i18n="slide2.member3.name">
+                Phạm Văn Minh
+              </div>
+              <div class="member-role" data-i18n="slide2.member3.role">
+                Developer
+              </div>
+              <div class="member-id" data-i18n="slide2.member3.id">
+                SE183365
+              </div>
             </div>
-            <div class="team-member">
-              <div class="member-name">Nguyễn Thị Ngọc Tuyền</div>
-              <div class="member-role">Developer</div>
-              <div class="member-id">SE193816</div>
+            <div class="team-member team-member-dev">
+              <div class="member-name" data-i18n="slide2.member4.name">
+                Nguyễn Thị Ngọc Tuyền
+              </div>
+              <div class="member-role" data-i18n="slide2.member4.role">
+                Developer
+              </div>
+              <div class="member-id" data-i18n="slide2.member4.id">
+                SE193816
+              </div>
             </div>
-            <div class="team-member">
-              <div class="member-name">Hoàng Bảo Thạch</div>
-              <div class="member-role">Developer</div>
-              <div class="member-id">SE191044</div>
+            <div class="team-member team-member-dev">
+              <div class="member-name" data-i18n="slide2.member5.name">
+                Hoàng Bảo Thạch
+              </div>
+              <div class="member-role" data-i18n="slide2.member5.role">
+                Developer
+              </div>
+              <div class="member-id" data-i18n="slide2.member5.id">
+                SE191044
+              </div>
             </div>
           </div>
         </div>
@@ -192,23 +311,43 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(1)">Overview</button>
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
-            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <button
+              class="pill"
+              onclick="goToSlide(1)"
+              data-i18n="common.nav.overview"
+            >
+              Overview
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(14)"
+              data-i18n="common.nav.demo"
+            >
+              Demo
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane">
-            <div class="tag-accent">The Problem</div>
-            <h2 class="section-title text-white">
+            <div class="tag-accent" data-i18n="slide3.tag">The Problem</div>
+            <h2 class="section-title text-white" data-i18n-html="slide3.title">
               Why Traditional<br />Systems Fail
             </h2>
-            <p class="desc-text mt-3">
+            <p class="desc-text mt-3" data-i18n="slide3.description">
               Traditional systems cannot handle real-world production needs.
             </p>
           </div>
@@ -217,34 +356,50 @@
               <li>
                 <div class="check-icon check-icon-danger">✕</div>
                 <div class="text-content">
-                  <h4 class="text-danger">Cannot Scale</h4>
-                  <p>Fails when traffic suddenly increases</p>
+                  <h4 class="text-danger" data-i18n="slide3.item1Title">
+                    Cannot Scale
+                  </h4>
+                  <p data-i18n="slide3.item1Description">
+                    Fails when traffic suddenly increases
+                  </p>
                 </div>
               </li>
               <li>
                 <div class="check-icon check-icon-danger">✕</div>
                 <div class="text-content">
-                  <h4 class="text-danger">High Downtime Risk</h4>
-                  <p>Single point of failure, no redundancy</p>
+                  <h4 class="text-danger" data-i18n="slide3.item2Title">
+                    High Downtime Risk
+                  </h4>
+                  <p data-i18n="slide3.item2Description">
+                    Single point of failure, no redundancy
+                  </p>
                 </div>
               </li>
               <li>
                 <div class="check-icon check-icon-danger">✕</div>
                 <div class="text-content">
-                  <h4 class="text-danger">Limited Security</h4>
-                  <p>Exposed endpoints, no WAF or encryption</p>
+                  <h4 class="text-danger" data-i18n="slide3.item3Title">
+                    Limited Security
+                  </h4>
+                  <p data-i18n="slide3.item3Description">
+                    Exposed endpoints, no WAF or encryption
+                  </p>
                 </div>
               </li>
               <li>
                 <div class="check-icon check-icon-danger">✕</div>
                 <div class="text-content">
-                  <h4 class="text-danger">Hard to Maintain</h4>
-                  <p>Manual deployments, no CI/CD pipeline</p>
+                  <h4 class="text-danger" data-i18n="slide3.item4Title">
+                    Hard to Maintain
+                  </h4>
+                  <p data-i18n="slide3.item4Description">
+                    Manual deployments, no CI/CD pipeline
+                  </p>
                 </div>
               </li>
             </ul>
             <div class="callout-box-light mt-2">
-              <p class="callout-text-dark">
+              <p class="callout-text-dark" data-i18n="slide3.callout">
                 → Need a scalable, secure, production-ready system
               </p>
             </div>
@@ -277,47 +432,79 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(1)">Overview</button>
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
-            <button class="pill" onclick="goToSlide(14)">Demo</button>
+            <button
+              class="pill"
+              onclick="goToSlide(1)"
+              data-i18n="common.nav.overview"
+            >
+              Overview
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
+            <button
+              class="pill"
+              onclick="goToSlide(14)"
+              data-i18n="common.nav.demo"
+            >
+              Demo
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane">
-            <div class="tag-accent">Our Solution</div>
-            <h2 class="section-title text-white">Built on<br />AWS Cloud</h2>
+            <div class="tag-accent" data-i18n="slide4.tag">Our Solution</div>
+            <h2 class="section-title text-white" data-i18n-html="slide4.title">
+              Built on<br />AWS Cloud
+            </h2>
             <div class="pill-cards-container pill-cards-col mt-2">
               <div class="info-pill-card">
                 <div class="number">1</div>
                 <div>
-                  <h4>Separated Layers</h4>
-                  <p>Frontend, Backend, Database fully decoupled</p>
+                  <h4 data-i18n="slide4.card1Title">Separated Layers</h4>
+                  <p data-i18n="slide4.card1Description">
+                    Frontend, Backend, Database fully decoupled
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">2</div>
                 <div>
-                  <h4>High Availability</h4>
-                  <p>Multi-AZ deployment, no single point of failure</p>
+                  <h4 data-i18n="slide4.card2Title">High Availability</h4>
+                  <p data-i18n="slide4.card2Description">
+                    Multi-AZ deployment, no single point of failure
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">3</div>
                 <div>
-                  <h4>Secure API</h4>
-                  <p>JWT-based stateless authentication</p>
+                  <h4 data-i18n="slide4.card3Title">Secure API</h4>
+                  <p data-i18n="slide4.card3Description">
+                    JWT-based stateless authentication
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="right-pane right-pane-center">
             <div class="screenshot-placeholder">
-              <img src="assets/web.png" alt="Web Interface" />
+              <img
+                src="assets/web.png"
+                alt="Web Interface"
+                data-i18n-alt="slide4.imageAlt"
+              />
             </div>
           </div>
         </div>
@@ -348,19 +535,32 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">🔥 Core Architecture</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide5.navTag"
+            >
+              🔥 Core Architecture
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="slide5-title-block">
-          <h2 class="section-title text-white text-center section-title-xl">
+          <h2
+            class="section-title text-white text-center section-title-xl"
+            data-i18n="slide5.title"
+          >
             Full System Architecture
           </h2>
-          <p class="desc-text text-center desc-text-limited">
+          <p
+            class="desc-text text-center desc-text-limited"
+            data-i18n="slide5.description"
+          >
             3 Layers: Edge – Application – Data · Multi-AZ · Secure &amp;
             Scalable
           </p>
@@ -368,7 +568,11 @@
 
         <div class="diagram-wrapper">
           <div class="diagram-placeholder">
-            <img src="assets/AWS-architecture.png" alt="AWS-architecture" />
+            <img
+              src="assets/AWS-architecture.png"
+              alt="AWS-architecture"
+              data-i18n-alt="slide5.imageAlt"
+            />
           </div>
         </div>
 
@@ -398,77 +602,104 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content align-center content-col-gap-sm">
-          <div class="tag-accent">Request Flow</div>
-          <h2 class="section-title text-white text-center section-title-xl">
+          <div class="tag-accent" data-i18n="slide6.tag">Request Flow</div>
+          <h2
+            class="section-title text-white text-center section-title-xl"
+            data-i18n="slide6.title"
+          >
             How Every Request Travels
           </h2>
-          <p class="desc-text text-center">
+          <p class="desc-text text-center" data-i18n="slide6.description">
             Every user action follows this flow across our system.
           </p>
 
           <div
             class="request-response-flow mt-3"
             aria-label="Request and response flow"
+            data-i18n-aria-label="slide6.flowAriaLabel"
           >
             <div class="flow-section">
-              <div class="flow-section-title">Request</div>
+              <div class="flow-section-title" data-i18n="slide6.request">
+                Request
+              </div>
               <div class="flow-row request-row">
                 <div class="flow-node">
-                  <span class="step-no">1</span><span>User</span>
+                  <span class="step-no">1</span
+                  ><span data-i18n="slide6.step1">User</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node">
-                  <span class="step-no">2</span><span>Route53</span>
+                  <span class="step-no">2</span
+                  ><span data-i18n="slide6.step2">Route53</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node">
-                  <span class="step-no">3</span><span>CloudFront</span>
+                  <span class="step-no">3</span
+                  ><span data-i18n="slide6.step3">CloudFront</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node">
-                  <span class="step-no">4</span><span>S3</span>
+                  <span class="step-no">4</span
+                  ><span data-i18n="slide6.step4">S3</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node main-path">
-                  <span class="step-no">5</span><span>ALB</span>
+                  <span class="step-no">5</span
+                  ><span data-i18n="slide6.step5">ALB</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node main-path">
-                  <span class="step-no">6</span><span>EC2</span>
+                  <span class="step-no">6</span
+                  ><span data-i18n="slide6.step6">EC2</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node main-path">
-                  <span class="step-no">7</span><span>RDS</span>
+                  <span class="step-no">7</span
+                  ><span data-i18n="slide6.step7">RDS</span>
                 </div>
               </div>
             </div>
 
             <div class="flow-section">
-              <div class="flow-section-title">Response</div>
+              <div class="flow-section-title" data-i18n="slide6.response">
+                Response
+              </div>
               <div class="flow-row response-row">
                 <div class="flow-node main-path">
-                  <span class="step-no">8</span><span>RDS</span>
+                  <span class="step-no">8</span
+                  ><span data-i18n="slide6.step8">RDS</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node">
-                  <span class="step-no">9</span><span>Response</span>
+                  <span class="step-no">9</span
+                  ><span data-i18n="slide6.step9">Response</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node">
-                  <span class="step-no">10</span><span>CloudFront</span>
+                  <span class="step-no">10</span
+                  ><span data-i18n="slide6.step10">CloudFront</span>
                 </div>
                 <span class="flow-inline-arrow" aria-hidden="true"></span>
                 <div class="flow-node end-user-node">
-                  <span class="step-no">11</span><span>User</span>
+                  <span class="step-no">11</span
+                  ><span data-i18n="slide6.step11">User</span>
                 </div>
               </div>
             </div>
@@ -501,23 +732,33 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane">
-            <div class="tag-accent">Security</div>
-            <h2 class="section-title text-white">Auth Flow<br />JWT Based</h2>
-            <p class="desc-text mt-3">
+            <div class="tag-accent" data-i18n="slide7.tag">Security</div>
+            <h2 class="section-title text-white" data-i18n-html="slide7.title">
+              Auth Flow<br />JWT Based
+            </h2>
+            <p class="desc-text mt-3" data-i18n="slide7.description">
               JWT-based authentication for stateless, scalable security.
             </p>
             <div class="callout-box-blue mt-2">
-              <p class="callout-text-white">
+              <p class="callout-text-white" data-i18n="slide7.callout">
                 ✓ Stateless &amp; secure authentication
               </p>
             </div>
@@ -525,30 +766,45 @@
           <div class="right-pane">
             <div class="auth-flow">
               <div class="auth-step">
-                <span class="step-num">1</span> User submits Login credentials
+                <span class="step-num">1</span>
+                <span class="auth-step-copy" data-i18n="slide7.step1">
+                  User submits Login credentials
+                </span>
                 <span class="arrow">→</span>
               </div>
               <div class="auth-step auth-step-blue">
-                <span class="step-num">2</span> Backend validates credentials &
-                returns JWT token
+                <span class="step-num">2</span>
+                <span class="auth-step-copy" data-i18n="slide7.step2">
+                  Backend validates credentials &amp; returns JWT token
+                </span>
                 <span class="arrow">↩</span>
               </div>
               <div class="auth-step">
-                <span class="step-num">3</span> Client stores token in memory /
-                header
+                <span class="step-num">3</span>
+                <span class="auth-step-copy" data-i18n="slide7.step3">
+                  Client stores token in memory / header
+                </span>
                 <span class="arrow">→</span>
               </div>
               <div class="auth-step auth-step-blue">
-                <span class="step-num">4</span> All API calls include
-                <strong>Bearer JWT</strong> <span class="arrow">→</span>
+                <span class="step-num">4</span>
+                <span class="auth-step-copy" data-i18n-html="slide7.step4">
+                  All API calls include <strong>Bearer JWT</strong>
+                </span>
+                <span class="arrow">→</span>
               </div>
               <div class="auth-step">
-                <span class="step-num">5</span> Backend verifies JWT signature ✓
+                <span class="step-num">5</span>
+                <span class="auth-step-copy" data-i18n="slide7.step5">
+                  Backend verifies JWT signature ✓
+                </span>
                 <span class="arrow">→</span>
               </div>
               <div class="auth-step auth-step-success">
                 <span class="step-num step-num-success">✓</span>
-                Access granted to protected resources
+                <span class="auth-step-copy" data-i18n="slide7.success">
+                  Access granted to protected resources
+                </span>
               </div>
             </div>
           </div>
@@ -580,51 +836,72 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">Layer 1 of 3</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide8.navTag"
+            >
+              Layer 1 of 3
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane left-pane-flex2">
-            <div class="tag-accent">Edge Layer</div>
-            <h2 class="section-title text-white">Fast & Secure User Access</h2>
+            <div class="tag-accent" data-i18n="slide8.tag">Edge Layer</div>
+            <h2 class="section-title text-white" data-i18n="slide8.title">
+              Fast & Secure User Access
+            </h2>
             <div class="pill-cards-container pill-cards-col mt-2">
               <div class="info-pill-card">
                 <div class="number">🌐</div>
                 <div>
-                  <h4>Route 53</h4>
-                  <p>DNS routing with health checks and failover</p>
+                  <h4 data-i18n="slide8.card1Title">Route 53</h4>
+                  <p data-i18n="slide8.card1Description">
+                    DNS routing with health checks and failover
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">⚡</div>
                 <div>
-                  <h4>CloudFront CDN</h4>
-                  <p>Global edge caching, low latency delivery</p>
+                  <h4 data-i18n="slide8.card2Title">CloudFront CDN</h4>
+                  <p data-i18n="slide8.card2Description">
+                    Global edge caching, low latency delivery
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🛡️</div>
                 <div>
-                  <h4>WAF</h4>
-                  <p>Web Application Firewall blocks threats</p>
+                  <h4 data-i18n="slide8.card3Title">WAF</h4>
+                  <p data-i18n="slide8.card3Description">
+                    Web Application Firewall blocks threats
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">📍</div>
                 <div>
-                  <h4>Location Service</h4>
-                  <p>Map &amp; geolocation for EVC stations</p>
+                  <h4 data-i18n="slide8.card4Title">Location Service</h4>
+                  <p data-i18n="slide8.card4Description">
+                    Map &amp; geolocation for EVC stations
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="right-pane right-pane-flex1-center-col">
-            <img src="assets/Edge_layer.png" alt="Edge_layer" />
+            <img
+              src="assets/Edge_layer.png"
+              alt="Edge_layer"
+              data-i18n-alt="slide8.imageAlt"
+            />
           </div>
         </div>
 
@@ -654,10 +931,17 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">Layer 2 of 3</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide9.navTag"
+            >
+              Layer 2 of 3
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
@@ -665,41 +949,55 @@
         <div class="content split-light-layout">
           <div class="right-pane right-pane-img-center">
             <div>
-              <img src="assets/Application.png" alt="Application" />
+              <img
+                src="assets/Application.png"
+                alt="Application"
+                data-i18n-alt="slide9.imageAlt"
+              />
             </div>
           </div>
           <div class="left-pane">
-            <div class="tag-accent">Application Layer</div>
-            <h2 class="section-title text-white">
+            <div class="tag-accent" data-i18n="slide9.tag">
+              Application Layer
+            </div>
+            <h2 class="section-title text-white" data-i18n-html="slide9.title">
               High Availability<br />& Scalability
             </h2>
             <div class="pill-cards-container pill-cards-col mt-2">
               <div class="info-pill-card">
                 <div class="number">⚖️</div>
                 <div>
-                  <h4>ALB</h4>
-                  <p>Application Load Balancer distributes traffic evenly</p>
+                  <h4 data-i18n="slide9.card1Title">ALB</h4>
+                  <p data-i18n="slide9.card1Description">
+                    Application Load Balancer distributes traffic evenly
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🖥️</div>
                 <div>
-                  <h4>EC2 Instances</h4>
-                  <p>Backend API runs on managed compute instances</p>
+                  <h4 data-i18n="slide9.card2Title">EC2 Instances</h4>
+                  <p data-i18n="slide9.card2Description">
+                    Backend API runs on managed compute instances
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">📈</div>
                 <div>
-                  <h4>Auto Scaling</h4>
-                  <p>Scales in/out based on real-time traffic demand</p>
+                  <h4 data-i18n="slide9.card3Title">Auto Scaling</h4>
+                  <p data-i18n="slide9.card3Description">
+                    Scales in/out based on real-time traffic demand
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🌍</div>
                 <div>
-                  <h4>Multi-AZ</h4>
-                  <p>Deployed across availability zones for redundancy</p>
+                  <h4 data-i18n="slide9.card4Title">Multi-AZ</h4>
+                  <p data-i18n="slide9.card4Description">
+                    Deployed across availability zones for redundancy
+                  </p>
                 </div>
               </div>
             </div>
@@ -732,53 +1030,75 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">Layer 3 of 3</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide10.navTag"
+            >
+              Layer 3 of 3
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane left-pane-flex2">
-            <div class="tag-accent">Data Layer</div>
-            <h2 class="section-title text-white">
+            <div class="tag-accent" data-i18n="slide10.tag">Data Layer</div>
+            <h2
+              class="section-title text-white"
+              data-i18n-html="slide10.title"
+            >
               Secure & Reliable<br />Data Storage
             </h2>
             <div class="pill-cards-container pill-cards-col mt-2">
               <div class="info-pill-card">
                 <div class="number">🗄️</div>
                 <div>
-                  <h4>Amazon RDS</h4>
-                  <p>Managed relational database with automated backups</p>
+                  <h4 data-i18n="slide10.card1Title">Amazon RDS</h4>
+                  <p data-i18n="slide10.card1Description">
+                    Managed relational database with automated backups
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🔁</div>
                 <div>
-                  <h4>Primary + Standby</h4>
-                  <p>Automatic failover with Multi-AZ replication</p>
+                  <h4 data-i18n="slide10.card2Title">Primary + Standby</h4>
+                  <p data-i18n="slide10.card2Description">
+                    Automatic failover with Multi-AZ replication
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🔒</div>
                 <div>
-                  <h4>Private Subnet</h4>
-                  <p>Isolated from public internet, VPC-only access</p>
+                  <h4 data-i18n="slide10.card3Title">Private Subnet</h4>
+                  <p data-i18n="slide10.card3Description">
+                    Isolated from public internet, VPC-only access
+                  </p>
                 </div>
               </div>
               <div class="info-pill-card">
                 <div class="number">🚫</div>
                 <div>
-                  <h4>No Public Access</h4>
-                  <p>Database only reachable from application layer</p>
+                  <h4 data-i18n="slide10.card4Title">No Public Access</h4>
+                  <p data-i18n="slide10.card4Description">
+                    Database only reachable from application layer
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="right-pane right-pane-flex1-center-col">
-            <img src="assets/Data_layer.png" alt="Data_layer" />
+            <img
+              src="assets/Data_layer.png"
+              alt="Data_layer"
+              data-i18n-alt="slide10.imageAlt"
+            />
           </div>
         </div>
 
@@ -808,46 +1128,91 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content align-center content-gap-lg">
-          <div class="tag-accent">Security &amp; Observability</div>
-          <h2 class="section-title text-white text-center section-title-xl">
+          <div class="tag-accent" data-i18n="slide11.tag">
+            Security &amp; Observability
+          </div>
+          <h2
+            class="section-title text-white text-center section-title-xl"
+            data-i18n="slide11.title"
+          >
             Full Security & Monitoring
           </h2>
 
           <div class="card-grid-2 mt-3">
             <div class="vertical-card highlight">
               <div class="icon-top">🔑</div>
-              <h4 class="vertical-card-title">Secrets Manager</h4>
-              <p class="vertical-card-desc">
+              <h4
+                class="vertical-card-title"
+                data-i18n="slide11.card1Title"
+              >
+                Secrets Manager
+              </h4>
+              <p
+                class="vertical-card-desc"
+                data-i18n="slide11.card1Description"
+              >
                 Securely stores DB credentials &amp; API keys
               </p>
             </div>
             <div class="vertical-card highlight">
               <div class="icon-top">🔐</div>
-              <h4 class="vertical-card-title">KMS Encryption</h4>
-              <p class="vertical-card-desc">
+              <h4
+                class="vertical-card-title"
+                data-i18n="slide11.card2Title"
+              >
+                KMS Encryption
+              </h4>
+              <p
+                class="vertical-card-desc"
+                data-i18n="slide11.card2Description"
+              >
                 Encrypts data at rest and in transit
               </p>
             </div>
             <div class="vertical-card highlight">
               <div class="icon-top">📊</div>
-              <h4 class="vertical-card-title">CloudWatch</h4>
-              <p class="vertical-card-desc">
+              <h4
+                class="vertical-card-title"
+                data-i18n="slide11.card3Title"
+              >
+                CloudWatch
+              </h4>
+              <p
+                class="vertical-card-desc"
+                data-i18n="slide11.card3Description"
+              >
                 Metrics, alerts, dashboards &amp; logs
               </p>
             </div>
             <div class="vertical-card highlight">
               <div class="icon-top">📋</div>
-              <h4 class="vertical-card-title">CloudTrail</h4>
-              <p class="vertical-card-desc">
+              <h4
+                class="vertical-card-title"
+                data-i18n="slide11.card4Title"
+              >
+                CloudTrail
+              </h4>
+              <p
+                class="vertical-card-desc"
+                data-i18n="slide11.card4Description"
+              >
                 Full audit trail of all API activity
               </p>
             </div>
@@ -880,52 +1245,80 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill" onclick="goToSlide(5)">Architecture</button>
+            <button
+              class="pill"
+              onclick="goToSlide(5)"
+              data-i18n="common.nav.architecture"
+            >
+              Architecture
+            </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content split-light-layout">
           <div class="left-pane">
-            <div class="tag-accent">Admin &amp; IAM</div>
-            <h2 class="section-title text-white">
+            <div class="tag-accent" data-i18n="slide12.tag">
+              Admin &amp; IAM
+            </div>
+            <h2
+              class="section-title text-white"
+              data-i18n-html="slide12.title"
+            >
               Controlled & <br />Secure Access
             </h2>
-            <p class="desc-text mt-3">
+            <p class="desc-text mt-3" data-i18n="slide12.description">
               We avoid direct server access for maximum security.
             </p>
             <div class="callout-box-blue-inline mt-2">
-              <p class="callout-text-white">🚫 No SSH — All access via SSM</p>
+              <p class="callout-text-white" data-i18n="slide12.callout">
+                🚫 No SSH — All access via SSM
+              </p>
             </div>
           </div>
           <div class="right-pane">
             <div class="horizontal-card-list iam-card-list">
               <div class="row-step row-step-light-odd">
-                <span>🖥️</span> <strong>AWS Systems Manager (SSM)</strong> —
-                browser shell
+                <span>🖥️</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item1">
+                  <strong>AWS Systems Manager (SSM)</strong> — browser shell
+                </span>
               </div>
               <div class="row-step row-step-light-even">
-                <span>🚫</span> <strong>No SSH ports</strong> open — attack
-                surface minimized
+                <span>🚫</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item2">
+                  <strong>No SSH ports open</strong> — attack surface minimized
+                </span>
               </div>
               <div class="row-step row-step-light-odd">
-                <span>👤</span> <strong>IAM Role for EC2</strong> — principle of
-                least privilege
+                <span>👤</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item3">
+                  <strong>IAM Role for EC2</strong> — principle of least
+                  privilege
+                </span>
               </div>
               <div class="row-step row-step-light-even">
-                <span>🔑</span> <strong>Read Secrets</strong> — from Secrets
-                Manager only
+                <span>🔑</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item4">
+                  <strong>Read Secrets</strong> — from Secrets Manager only
+                </span>
               </div>
               <div class="row-step row-step-light-odd">
-                <span>📝</span> <strong>Write Logs</strong> — to CloudWatch log
-                groups
+                <span>📝</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item5">
+                  <strong>Write Logs</strong> — to CloudWatch log groups
+                </span>
               </div>
               <div class="row-step row-step-light-even">
-                <span>📧</span> <strong>Send Email</strong> — via SES for
-                notifications
+                <span>📧</span>
+                <span class="row-step-copy" data-i18n-html="slide12.item6">
+                  <strong>Send Email</strong> — via SES for notifications
+                </span>
               </div>
             </div>
           </div>
@@ -957,58 +1350,92 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">🔥 Key Improvement</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide13.navTag"
+            >
+              🔥 Key Improvement
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
 
         <div class="content align-center content-gap-sm">
-          <div class="tag-accent">Before vs After</div>
-          <h2 class="section-title text-white text-center section-title-xl">
+          <div class="tag-accent" data-i18n="slide13.tag">Before vs After</div>
+          <h2
+            class="section-title text-white text-center section-title-xl"
+            data-i18n="slide13.title"
+          >
             Production-Ready Architecture
           </h2>
 
           <table class="compare-table">
             <thead>
               <tr>
-                <th>Aspect</th>
-                <th>❌ Before</th>
-                <th>✅ After</th>
+                <th data-i18n="slide13.headerAspect">Aspect</th>
+                <th data-i18n="slide13.headerBefore">❌ Before</th>
+                <th data-i18n="slide13.headerAfter">✅ After</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Scalability</td>
-                <td class="bad">Single server, fixed capacity</td>
-                <td class="good">Auto Scaling across Multi-AZ</td>
+                <td data-i18n="slide13.row1Aspect">Scalability</td>
+                <td class="bad" data-i18n="slide13.row1Before">
+                  Single server, fixed capacity
+                </td>
+                <td class="good" data-i18n="slide13.row1After">
+                  Auto Scaling across Multi-AZ
+                </td>
               </tr>
               <tr>
-                <td>Monitoring</td>
-                <td class="bad">No monitoring or alerts</td>
-                <td class="good">CloudWatch + CloudTrail</td>
+                <td data-i18n="slide13.row2Aspect">Monitoring</td>
+                <td class="bad" data-i18n="slide13.row2Before">
+                  No monitoring or alerts
+                </td>
+                <td class="good" data-i18n="slide13.row2After">
+                  CloudWatch + CloudTrail
+                </td>
               </tr>
               <tr>
-                <td>Security</td>
-                <td class="bad">Weak, open endpoints</td>
-                <td class="good">WAF + JWT + IAM + KMS</td>
+                <td data-i18n="slide13.row3Aspect">Security</td>
+                <td class="bad" data-i18n="slide13.row3Before">
+                  Weak, open endpoints
+                </td>
+                <td class="good" data-i18n="slide13.row3After">
+                  WAF + JWT + IAM + KMS
+                </td>
               </tr>
               <tr>
-                <td>Availability</td>
-                <td class="bad">Single point of failure</td>
-                <td class="good">Multi-AZ, ALB failover</td>
+                <td data-i18n="slide13.row4Aspect">Availability</td>
+                <td class="bad" data-i18n="slide13.row4Before">
+                  Single point of failure
+                </td>
+                <td class="good" data-i18n="slide13.row4After">
+                  Multi-AZ, ALB failover
+                </td>
               </tr>
               <tr>
-                <td>Access Control</td>
-                <td class="bad">SSH with shared keys</td>
-                <td class="good">SSM + IAM roles, no SSH</td>
+                <td data-i18n="slide13.row5Aspect">Access Control</td>
+                <td class="bad" data-i18n="slide13.row5Before">
+                  SSH with shared keys
+                </td>
+                <td class="good" data-i18n="slide13.row5After">
+                  SSM + IAM roles, no SSH
+                </td>
               </tr>
               <tr>
-                <td>Database</td>
-                <td class="bad">Public, no backup</td>
-                <td class="good">Private subnet + RDS Multi-AZ</td>
+                <td data-i18n="slide13.row6Aspect">Database</td>
+                <td class="bad" data-i18n="slide13.row6Before">
+                  Public, no backup
+                </td>
+                <td class="good" data-i18n="slide13.row6After">
+                  Private subnet + RDS Multi-AZ
+                </td>
               </tr>
             </tbody>
           </table>
@@ -1041,10 +1468,17 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <div class="tag-accent tag-accent-nav">🔴 Live</div>
+            <div
+              class="tag-accent tag-accent-nav"
+              data-i18n="slide14.navTag"
+            >
+              🔴 Live
+            </div>
             <div class="hamburger"><span></span><span></span><span></span></div>
           </nav>
         </header>
@@ -1057,22 +1491,37 @@
               target="_blank"
               rel="noopener noreferrer"
               class="tag-accent tag-accent-demo tag-accent-link"
+              data-i18n="slide14.cta"
               >🔗 Demo</a
             >
-            <h2 class="giant-text text-white demo-title">Real-Time System</h2>
-            <p class="sub-giant-text demo-subtitle">
+            <h2
+              class="giant-text text-white demo-title"
+              data-i18n="slide14.title"
+            >
+              Real-Time System
+            </h2>
+            <p class="sub-giant-text demo-subtitle" data-i18n="slide14.subtitle">
               Demonstrating real-time system behavior
             </p>
           </div>
           <div class="horizontal-card-list demo-steps">
             <div class="row-step highlight">
-              <span>1</span> User login &amp; JWT authentication flow
+              <span>1</span>
+              <span class="row-step-copy" data-i18n="slide14.step1">
+                User login &amp; JWT authentication flow
+              </span>
             </div>
             <div class="row-step">
-              <span>2</span> Core system functionality walkthrough
+              <span>2</span>
+              <span class="row-step-copy" data-i18n="slide14.step2">
+                Core system functionality walkthrough
+              </span>
             </div>
             <div class="row-step highlight">
-              <span>3</span> API interaction with AWS backend via ALB
+              <span>3</span>
+              <span class="row-step-copy" data-i18n="slide14.step3">
+                API interaction with AWS backend via ALB
+              </span>
             </div>
           </div>
         </div>
@@ -1105,10 +1554,16 @@
                 ></path>
               </svg>
             </div>
-            <span class="tev-logo-text"><span class="ev">EV</span>Charge</span>
+            <span class="tev-logo-text" data-i18n-html="brand.evcharge"
+              ><span class="ev">EV</span>Charge</span
+            >
           </div>
           <nav class="top-nav">
-            <button class="pill active" onclick="goToSlide(1)">
+            <button
+              class="pill active"
+              onclick="goToSlide(1)"
+              data-i18n="common.nav.startOver"
+            >
               ↩ Start Over
             </button>
             <div class="hamburger"><span></span><span></span><span></span></div>
@@ -1117,38 +1572,41 @@
 
         <div class="content cover-layout">
           <div class="relative-z">
-            <div class="tag-accent">Conclusion</div>
-            <h2 class="giant-text text-white conclusion-giant">
+            <div class="tag-accent" data-i18n="slide15.tag">Conclusion</div>
+            <h2
+              class="giant-text text-white conclusion-giant"
+              data-i18n-html="slide15.title"
+            >
               Production<br />Ready ✓
             </h2>
             <div class="conclusion-points conclusion-points-layout mt-4">
               <div class="conclusion-point">
                 <div class="c-dot"></div>
-                <span class="conclusion-text"
+                <span class="conclusion-text" data-i18n="slide15.point1"
                   >Scalable AWS architecture with Auto Scaling</span
                 >
               </div>
               <div class="conclusion-point">
                 <div class="c-dot"></div>
-                <span class="conclusion-text"
+                <span class="conclusion-text" data-i18n="slide15.point2"
                   >High availability with Multi-AZ deployment</span
                 >
               </div>
               <div class="conclusion-point">
                 <div class="c-dot"></div>
-                <span class="conclusion-text"
+                <span class="conclusion-text" data-i18n="slide15.point3"
                   >Strong security: WAF, JWT, IAM, KMS</span
                 >
               </div>
               <div class="conclusion-point">
                 <div class="c-dot"></div>
-                <span class="conclusion-text"
+                <span class="conclusion-text" data-i18n="slide15.point4"
                   >Ready for real-world production deployment</span
                 >
               </div>
             </div>
             <div class="conclusion-badge">
-              <p class="conclusion-badge-text">
+              <p class="conclusion-badge-text" data-i18n="slide15.badge">
                 Not just a project — a production-ready system
               </p>
             </div>
