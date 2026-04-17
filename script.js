@@ -119,9 +119,8 @@ const translations = {
       step8: "RDS",
       step9: "EC2",
       step10: "ALB",
-      step11: "Response",
-      step12: "CloudFront",
-      step13: "User",
+      step11: "CloudFront",
+      step12: "User",
     },
     slide7: {
       tag: "Security",
@@ -375,9 +374,8 @@ const translations = {
       step8: "RDS",
       step9: "EC2",
       step10: "ALB",
-      step11: "Phản hồi",
-      step12: "CloudFront",
-      step13: "Người dùng",
+      step11: "CloudFront",
+      step12: "Người dùng",
     },
     slide7: {
       tag: "Bảo mật",
