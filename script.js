@@ -145,8 +145,8 @@ const translations = {
       card2Description: "Global edge caching, low latency delivery",
       card3Title: "WAF",
       card3Description: "Web Application Firewall blocks threats",
-      card4Title: "Location Service",
-      card4Description: "Map & geolocation for EVC stations",
+      card4Title: "AWS S3 Storage",
+      card4Description: "Scalable object storage for EVC data, backups & media files",
       imageAlt: "Edge layer diagram",
     },
     slide9: {
@@ -400,8 +400,8 @@ const translations = {
       card2Description: "Cache biên toàn cầu, phân phối độ trễ thấp",
       card3Title: "WAF",
       card3Description: "Tường lửa ứng dụng web chặn các mối đe dọa",
-      card4Title: "Dịch vụ vị trí",
-      card4Description: "Bản đồ và định vị cho các trạm EVC",
+      card4Title: "Lưu trữ AWS S3",
+      card4Description: "BLưu trữ đối tượng có khả năng mở rộng cho dữ liệu EVC, bản sao lưu và tệp phương tiện",
       imageAlt: "Sơ đồ lớp biên",
     },
     slide9: {
